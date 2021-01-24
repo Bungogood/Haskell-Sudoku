@@ -48,6 +48,8 @@ r str | length str /= 9 = row r getline
       | and [isInt c | c <- str] = 
           where 
 
+toSudoku ::  -> Sudoku
+
 
 output :: Sudoku -> IO ()
 output s = do
@@ -106,6 +108,6 @@ solve :: Sudoku -> Maybe Sudoku
 solve s = process s 0
 
 main = do  
-    putStrLn "Hello, what's your name?"  
-    name <- getLine  
-    putStrLn ("Hey " ++ name ++ ", you rock!")  
+    sudoku <- input sudoku
+    sudoku <- solve sudoku
+    output sudoku
